@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <odoo>
+     <!--INICIO VINCULO FAMILIAR-->
+        <record id="view_hr_bond_family_form" model="ir.ui.view">
+            <field name="name">hr.bond.family.form</field>
+            <field name="model">hr.bond.family</field>
+            <field name="arch" type="xml">
+                <form string="Vinculo Familiar">
+                    <sheet>
+                        <group col="4">
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+      <record id="view_hr_bond_family_tree" model="ir.ui.view">
+            <field name="name">hr.bond.family.tree</field>
+            <field name="model">hr.bond.family</field>
+            <field name="arch" type="xml">
+                <tree string="Vinculo Familiar">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+      <record id="hr_bond_family_action" model="ir.actions.act_window">
+            <field name="name">Vinculo Familiar</field>
+            <field name="res_model">hr.bond.family</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Crea una vinculo familiar
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Vinculo Familiar"
+              parent="hr.menu_human_resources_configuration"
+              id="menu_hr_bond_family_action"
+              action="hr_bond_family_action"/>
+
+
+    <!--INICIO TIPO PAGO-->
+        <record id="view_hr_type_payment_form" model="ir.ui.view">
+            <field name="name">hr.type.payment.form</field>
+            <field name="model">hr.type.payment</field>
+            <field name="arch" type="xml">
+                <form string="Tipo de Pago">
+                    <sheet>
+                        <group col="4">
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+      <record id="view_hr_type_payment" model="ir.ui.view">
+            <field name="name">hr.type.payment.tree</field>
+            <field name="model">hr.type.payment</field>
+            <field name="arch" type="xml">
+                <tree string="Vinculo Familiar">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+      <record id="hr_type_payment_action" model="ir.actions.act_window">
+            <field name="name">Tipo de Pago</field>
+            <field name="res_model">hr.type.payment</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Crea un Tipo de Pago
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Tipo de Pago"
+              parent="hr.menu_human_resources_configuration"
+              id="menu_hr_type_payment_action"
+              action="hr_type_payment_action"/>       
+
+
+           <!--INICIO MOTIVO CESE-->
+        <record id="view_hr_reason_termination_form" model="ir.ui.view">
+            <field name="name">hr.reason.termination.form</field>
+            <field name="model">hr.reason.termination</field>
+            <field name="arch" type="xml">
+                <form string="Motivo de Cese">
+                    <sheet>
+                        <group col="4">
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+      <record id="view_hr_reason_termination_tree" model="ir.ui.view">
+            <field name="name">hr.reason.termination.tree</field>
+            <field name="model">hr.reason.termination</field>
+            <field name="arch" type="xml">
+                <tree string="Motivo de Cese">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+      <record id="hr_reason_termination_action" model="ir.actions.act_window">
+            <field name="name">Motivo de Cese</field>
+            <field name="res_model">hr.reason.termination</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Crea un Motivo de Cese
+                </p>
+            </field>
+        </record>
+
+     <menuitem name="Motivo de Cese"
+              parent="hr.menu_human_resources_configuration"
+              id="menu_hr_reason_termination_action"
+              action="hr_reason_termination_action"/> 
+
+
+
+          <!--INICIO SITUACION ESPECIAL-->
+        <record id="view_hr_special_situation_form" model="ir.ui.view">
+            <field name="name">hr.special.situation.form</field>
+            <field name="model">hr.special.situation</field>
+            <field name="arch" type="xml">
+                <form string="Situacion Especial">
+                    <sheet>
+                        <group col="4">
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+      <record id="view_hr_special_situation_tree" model="ir.ui.view">
+            <field name="name">hr.special.situation.tree</field>
+            <field name="model">hr.special.situation</field>
+            <field name="arch" type="xml">
+                <tree string="Situacion Especial">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+      <record id="hr_special_situation_action" model="ir.actions.act_window">
+            <field name="name">Situacion Especial</field>
+            <field name="res_model">hr.special.situation</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Crea una Situacion Especial
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Situacion Especial"
+              parent="hr.menu_human_resources_configuration"
+              id="menu_hr_special_situation_action"
+              action="hr_special_situation_action"/> 
+
+        <!--INICIO TIPO TRABAJADOR-->
+        <record id="view_hr_type_employee_form" model="ir.ui.view">
+            <field name="name">hr.type.employee.form</field>
+            <field name="model">hr.type.employee</field>
+            <field name="arch" type="xml">
+                <form string="Tipo de Trabajador">
+                    <sheet>
+                        <group col="4">
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+      <record id="view_hr_type_employee_tree" model="ir.ui.view">
+            <field name="name">hr.type.employee.tree</field>
+            <field name="model">hr.type.employee</field>
+            <field name="arch" type="xml">
+                <tree string="Tipo de Trabajador">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+      <record id="hr_type_employee_action" model="ir.actions.act_window">
+            <field name="name">Tipo de Trabajador</field>
+            <field name="res_model">hr.type.employee</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Crea un Tipo Trabajador
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Tipo de Trabajador"
+              parent="hr.menu_human_resources_configuration"
+              id="menu_hr_type_employee_action"
+              action="hr_type_employee_action"/> 
+
+        <!--INICIO FONDO PENSION-->
+        <record id="view_hr_pension_fund_form" model="ir.ui.view">
+            <field name="name">hr.pension.fund.form</field>
+            <field name="model">hr.pension.fund</field>
+            <field name="arch" type="xml">
+                <form string="Fondo de Pension">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="percentage_incoming_required"/>
+                                <field name="commission_on_flow"/>
+                            </group>
+                            <group>
+                                <field name="commission_on_flow_mix"/>
+                                <field name="sure_prime"/>
+                                <field name="maximum_insurable_remuneration"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+      <record id="view_hr_pension_fund_tree" model="ir.ui.view">
+            <field name="name">hr.pension.fund.tree</field>
+            <field name="model">hr.pension.fund</field>
+            <field name="arch" type="xml">
+                <tree string="Fondo de Pension">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+      <record id="hr_pension_fund_action" model="ir.actions.act_window">
+            <field name="name">Fondo de Pension</field>
+            <field name="res_model">hr.pension.fund</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Crea un Fondo de Pension
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Fondo de Pension"
+              parent="hr.menu_human_resources_configuration"
+              id="menu_hr_pension_fund_action"
+              action="hr_pension_fund_action"/> 
+
+
+         <!--INICIO PERIODO-->
+        <record id="view_hr_period_form" model="ir.ui.view">
+            <field name="name">hr.period.form</field>
+            <field name="model">hr.period</field>
+            <field name="arch" type="xml">
+                <form string="Periodo">
+                    <sheet>
+                        <group col="4">
+                            <field name="month_period"/>
+                            <field name="year_period"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+      <record id="view_hr_period_tree" model="ir.ui.view">
+            <field name="name">hr.period.tree</field>
+            <field name="model">hr.period</field>
+            <field name="arch" type="xml">
+                <tree string="Periodo">
+                    <field name="month_period"/>
+                    <field name="year_period"/>
+                </tree>
+            </field>
+        </record>
+
+      <record id="hr_period_action" model="ir.actions.act_window">
+            <field name="name">Periodo</field>
+            <field name="res_model">hr.period</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Crea un Periodo
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Periodo"
+              parent="hr.menu_human_resources_configuration"
+              id="menu_hr_period_action"
+              action="hr_period_action"/> 
+
+    </odoo>

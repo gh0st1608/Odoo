@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<!-- PROJECTS -->
+      <record id="project_form" model="ir.ui.view">
+        <field name="name">project.form</field>
+        <field name="model">reliant.project</field>
+        <field name="arch" type="xml">
+            <form string="Proyecto">
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="location_country"/>
+                        <field name="location_city"/>
+                        <field name="description"/>
+                        <field name="image"/>        
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="project_tree" model="ir.ui.view">
+        <field name="name">project.tree</field>
+        <field name="model">reliant.project</field>
+        <field name="arch" type="xml">
+            <tree string="Proyecto">
+                <field name="name"/>
+                <field name="location_country"/>
+                <field name="location_city"/>
+                <field name="description"/>
+                <field name="image"/>  
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="project_action">
+        <field name="name">Proyectos</field>
+        <field name="res_model">reliant.project</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Crear El Primer Proyecto
+            </p>
+        </field>
+    </record>
+
+    
+<!-- -->
+<!-- SERVICES -->
+
+    <record id="service_form" model="ir.ui.view">
+        <field name="name">service.form</field>
+        <field name="model">reliant.service</field>
+        <field name="arch" type="xml">
+            <form string="Servicio">
+                <group>
+                    <group>
+                        <field name="name_service"/>
+                        <field name="description_service"/>
+                        <field name="image_service"/>        
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+     <record id="service_tree" model="ir.ui.view">
+        <field name="name">service.tree</field>
+        <field name="model">reliant.service</field>
+        <field name="arch" type="xml">
+            <tree string="Servicio">
+                <field name="name_service"/>
+                <field name="description_service"/>
+                <field name="image_service"/>  
+            </tree>
+        </field>
+    </record>
+
+<!-- -->
+
+    <record model="ir.actions.act_window" id="project_action">
+        <field name="name">Proyectos</field>
+        <field name="res_model">reliant.project</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Crear El Primer Proyecto
+            </p>
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="service_action">
+        <field name="name">Servicios</field>
+        <field name="res_model">reliant.service</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Crear El Primer Servicio</p>
+        </field>
+    </record>
+
+
+
+
+     <menuitem id="menu_reliant" name="Reliant" />
+     
+        <menuitem id="submenu_reliant_project" parent="menu_reliant" name="Registro Proyecto" action="project_action" sequence="10"/>
+        <menuitem id="submenu_reliant_service" parent="menu_reliant" name="Registro Servicio" action="service_action" sequence="20"/>
+        
+
+<!-- -->
+</odoo>

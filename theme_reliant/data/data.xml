@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data noupdate="1">
+        
+		<record id="menu_projects" model="website.menu">
+            <field name="name">Projects</field>
+            <field name="url">/projects</field>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">20</field>
+        </record>
+        <record id="menu_reliant_service" model="website.menu">
+            <field name="name">Services</field>
+            <field name="url">/services</field>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">30</field>
+        </record>
+        <record id="menu_reliant_about" model="website.menu">
+            <field name="name">About</field>
+            <field name="url">/about</field>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">40</field>
+        </record>
+        <record id="menu_reliant_sustainability" model="website.menu">
+            <field name="name">Sustainability</field>
+            <field name="url">/sustainability</field>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">50</field>
+        </record>
+
+
+	</data>
+
+</odoo>

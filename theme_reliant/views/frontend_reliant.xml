@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="assets_frontend" inherit_id="website.assets_frontend" name="Custom Modulo">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/theme_reliant/static/css/style.css" />
+        </xpath>
+    </template>
+
+    <template id="projects" name="Proyecto">
+        <t t-call="website.layout">
+            <section class="s_text_block pt-1  bg-secondary s_masonry_block" data-vcss="001">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 col-sm-6 col-lg-6 reliant_ex1">
+                        <div class="reliant_project_div1">
+                            <p class="p_reliant_project_list_1">Our Projects</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-6 col-lg-6 reliant_ex2">
+                        <div class="reliant_project_div2">
+                            <p class="p_reliant_project_list_2" style="padding-bottom: 1%;">-->ALL</p>
+                            <div t-foreach="projects" t-as="pro">
+                                <p class="p_reliant_project_list_2"><t t-esc="pro.name"/></p>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div> 
+            </section>
+            <t t-set="a" t-value="1"/>  
+            <div t-foreach="projects" t-as="pro">
+                <a t-att-href="'/projects/%s' % pro.id" >
+                    <t t-if="a % 2==1"> 
+                        <section class="s_text_block pt-1 pb-1 bg-secondary s_masonry_block" data-vcss="001">
+
+                            <div class="container">
+                            
+                                <div class="row" >
+                                
+                                    <div id="img-reliant-project-list-left" class="col-8 col-sm-8 col-lg-8 reliant_ex3 ">
+                                        <div class="reliant_project_div3" >
+                                            <span itemprop="image" t-field="pro.image" t-options='{"widget": "image"}' style="height:100%;width:100%;"/>
+                                        </div>
+                                        <section  style="position:absolute;z-index:2;padding:0;margin:0;border-style: solid;border-width: 2px;bottom:5%;border-color:#9cadad;margin-left:4%;width:92%;height:90%">
+                                            <p class="p-list-projects" ><t t-esc="pro.name"/></p>
+                                        </section>      
+                                    </div>
+                                    <div id="img-reliant-project-list-right" class="col-4 col-sm-4 col-lg-4 reliant_ex4" >
+                                        <div class="reliant_div5" >
+                                            <span   t-field="pro.image" t-options='{"widget": "image"}' style="height:100%;width:100%;"/>
+                                        </div>
+                                    </div> 
+                                
+                                </div>
+                            </div>        
+                        </section>
+                    </t>
+                    <t t-else="">
+                        <section class="s_text_block pt-1 pb-1 bg-secondary s_masonry_block" data-vcss="001">
+
+                            <div class="container">
+                            
+                                <div class="row" >
+                                    <div id="img-reliant-project-list-right" class="col-4 col-sm-4 col-lg-4 reliant_ex4" >
+                                        <div class="reliant_div5_2" >
+                                            <span   t-field="pro.image" t-options='{"widget": "image"}' style="height:100%;width:100%;"/>
+                                        </div>
+                                    </div> 
+                                    <div id="img-reliant-project-list-left" class="col-8 col-sm-8 col-lg-8 reliant_ex3 ">
+                                        <div class="reliant_project_div3_2" >
+                                            <span itemprop="image" t-field="pro.image" t-options='{"widget": "image"}' style="height:100%;width:100%;"/>
+                                        </div>
+                                        <section  style="position:absolute;z-index:2;padding:0;margin:0;border-style: solid;border-width: 2px;bottom:5%;border-color:#9cadad;margin-left:4%;width:92%;height:90%">
+                                            <p class="p-list-projects" ><t t-esc="pro.name"/></p>
+                                        </section>      
+                                    </div>
+                                </div>
+                            </div>        
+                        </section>
+                    </t>
+                </a>
+                <t t-set="a" t-value="a+1"/>
+            </div>
+            <div class="oe_structure oe_empty"/>
+        </t>
+    </template>
+
+    <template id="projects_details" name="Detalles Proyecto">
+        <t t-call="website.layout">
+            <section class="s_text_block pt32 pb32 bg-secondary s_masonry_block" data-vcss="001">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-9 rel_snippet5_loc">
+                            <div class="rel_snippet5_1_1">
+                                <p class="p_reliant_project_1"><t t-esc="project.name"/></p>
+                            </div>
+                        </div>
+                        <div class="col-3 rel_snippet5_loc">
+                            <div  class="rel_snippet5_1_2">
+                                <span style="color:#9c9c9c;">Location<br></br></span>
+                                <span ><t t-esc="project.location_city.name"/>, <t t-esc="project.location_country.name"/></span>
+
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="row">
+                        <div id="img-reliant-project" class="col-12 rel_snippet5_loc">
+                            <div class="rel_snippet5_2_1">
+                                <span itemprop="image" t-field="project.image" t-options='{"widget": "image"}' style="height:100%;width:100%;"/>
+                            </div>
+                        </div>    
+                    </div>
+                    <div class="row">
+                        <div class="col-12 rel_snippet5_loc">
+                                <div class="rel_snippet5_3_1" data-name="Block" >
+                                    <p class=" p_reliant_project_3"><t t-esc="project.description"/></p>
+                                </div>
+                        </div>
+                    </div> 
+                </div>
+            </section>
+            <div class="oe_structure oe_empty"/>
+        </t>
+    </template>
+
+    <template id="services" name="Servicio">
+            <t t-call="website.layout">
+                <section class="s_text_block pt-1  bg-secondary s_masonry_block" data-vcss="001">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6 rel_snippet4_loc">
+                                    <div class="rel_snippet4_1_1">
+                                        <p class="p_reliant_service_1">Our Services</p>
+                                    </div>
+                            </div>
+                            <div class="col-3 rel_snippet4_loc">
+                                    <div class="rel_snippet4_1_2">
+                                        <p class="p_reliant_service_2">Reliant constantly works, with social responsibility, to maintain and improve its high standards in safety, speed and efficiency in mechanized development mining. We develop specialized works according to the project requirement using trackless equipment. Our presence is around the world executing services for mining companies such as Mopani Copper</p>
+                                    </div>
+                            </div>
+                            <div class="col-3 rel_snippet4_loc">
+                                    <div class="rel_snippet4_1_2">
+                                        <p class="p_reliant_service_2">Mines Plc, Konkola Copper Mines Plc, Lubambe Copper Mine Ltd, Hindustan Zinc Limited and Alphamin Resources Corp.<br></br><br></br> We Are Innovative <br></br>We are Safety Conscious <br></br>We Are Committed To Quality <br></br>We Are Always Improving</p>
+                                    </div>
+                            </div>
+                        </div>  
+                    </div> 
+                </section>  
+                <section class="s_text_block pt-1 pb-1 bg-secondary s_masonry_block" >
+                        <div class="container">
+                            <div class="row" >
+                                <t t-set="cont" t-value="0"/>
+                                <t t-set="color" t-value="'color_class1'"/>
+                                <t t-foreach="services" t-as="serv">
+                                    <t t-if="cont==2">
+                                        <t t-set="cont" t-value="0"/>
+                                        <t t-if="color=='color_class2'">
+                                            <t t-set="color" t-value="'color_class1'"/>    
+                                        </t>
+                                        <t t-else="">
+                                        <t t-set="color" t-value="'color_class2'"/>
+                                        </t>
+                                    </t>
+                                    <div class="col-lg-2 rel_snippet4_loc">
+                                        <a t-att-href="'/services/%s' % serv.id">                                    
+                                            <div t-attf-class="rel_snippet4_2_1 #{color}">
+                                                <p class="p_reliant_service_title"><t t-esc="serv.name_service"/></p>
+                                                <p class="p_reliant_service_description">→<br></br><t t-esc="serv.description_service"/></p>
+                                            </div>
+                                        </a>
+                                    </div>  
+                                     <t t-set="cont" t-value="cont+1"/>
+                                </t>
+                            </div>
+                        </div>            
+                </section>
+                <section class="s_text_block pt-1 pb-1 bg-secondary s_masonry_block" data-vcss="001">
+                    <div class="container">
+                        <div class="row" >
+                            <div class="col-4 rel_snippet4_loc" >
+                                
+                                    <div class="rel_snippet4_3_1" data-name="Block" >
+                                        <a t-att-href="'/projects/'" style="text-decoration: none;">
+                                        <p class="p_reliant_service_title_2">Current Projects</p>
+                                        </a>                                 
+                                    </div>
+                                
+                            </div>
+                            <div class="col-4 rel_snippet4_loc" > 
+                                    <div class="rel_snippet4_3_2" data-name="Block" >
+                                        <img src="/theme_reliant/static/img/project.png" style="height:100%;
+                                                width:100%;"  alt=""/>
+                                    </div>
+                            </div>
+                            <div class="col-4 rel_snippet4_loc" >
+                                    <div class="rel_snippet4_3_2" data-name="Block">
+                                        <img src="/theme_reliant/static/img/project.png" style="height:100%;
+                                            width:100%;"  alt=""/>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="oe_structure oe_empty"/>
+            </t>
+    </template>
+
+    <template id="services_details" name="Detalle Servicio">
+        <t t-call="website.layout">
+            <section class="s_text_block pt32 pb32 bg-secondary s_masonry_block" data-vcss="001">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-5 reliant_ex1">
+                            <div class="reliant_service_div1">
+                                <p class="p_reliant_service_1"><t t-esc="service.name_service"/></p>
+                            </div>
+                        </div>
+                        <div class="col-7 reliant_ex2">
+                            <div class="reliant_service_div2">
+                                <p class="p_reliant_service_title_3">Service Description</p>
+                            </div>
+                        </div>  
+                    </div>
+                    <div class="row">
+                      <div id="img-reliant-service" class="col-5 reliant_ex3 " >
+                            <div class="reliant_service_div3">
+                                <span itemprop="image" t-field="service.image_service" t-options='{"widget": "image"}' style="height:100%;width:100%;"/>
+                            </div>
+                        </div>
+                        <div class="col-7 reliant_ex4" >
+                            <div class="reliant_service_div4 " data-name="Block" >
+                                 <p class=" p_reliant_service_3"><t t-esc="service.description_service"/></p>
+                            </div>
+                        </div> 
+                    </div> 
+                </div>
+            </section>  
+            <div class="oe_structure oe_empty"/>         
+        </t>
+    </template>
+
+
+    <template id="template_header_magazine_proyect_reliant" inherit_id="website.layout" name="Template Header Magazine" active="False">
+        <xpath expr="//header//nav" position="replace">
+            <!-- Topbar -->
+            <div class="oe_structure" id="oe_structure_header_magazine_1"/>
+            <nav id="nav-reliant" data-name="Navbar" class="navbar navbar-light o_colored_level o_cc" style="background-color:#E6E6E6">
+                <div id="top_menu_container" class="container" style="background-color:#E6E6E6">
+                    <!-- Brand 
+                    <t t-call="website.placeholder_header_brand"/>-->
+                    <div id="logo-reliant" class="d-flex justify-content-start bd-highlight align-items-center">
+                        <div class="p-2 bd-highlight">
+                            <a href="/" aria-current="page" id="log_main_mobile" class="list__item__enlace logo justify-content-center py-0 nuxt-link-exact-active nuxt-link-active" >
+                                <img src="/theme_reliant/static/img/reliant_logo.png" alt="Logo RELIANT" class="img-fluid list__item__enlace__logo" />
+                            </a>
+                        </div>
+                        
+                    </div>
+                    <div class="d-flex align-items-center ml-auto">
+                        <!-- Language Selector -->
+                        <t t-call="website.placeholder_header_language_selector"/>
+                        <!-- Navbar Toggler -->
+                        <t t-call="website.navbar_toggler">
+                            <t t-set="_toggler_class" t-value="'ml-2'"/>
+                        </t>
+                    </div>
+                    <!-- Navbar Collapse -->
+                    <div id="top_menu_collapse" class="collapse navbar-collapse">
+                        <t t-set="_nav_class" t-value="'text-right'"/>
+                        <t t-call="website.navbar_nav">
+                            <!-- Menu -->
+                            <t t-foreach="website.menu_id.child_id" t-as="submenu">
+                                <t t-call="website.submenu">
+                                    <t t-set="item_class" t-value="'nav-item'"/>
+                                    <t t-set="link_class" t-value="'nav-link'"/>
+                                </t>
+                            </t>
+                            <!-- Sign In -->
+                            <t t-call="portal.placeholder_user_sign_in">
+                                <t t-set="_item_class" t-value="'nav-item'"/>
+                                <t t-set="_link_class" t-value="'nav-link'"/>
+                            </t>
+                            <!-- User Dropdown -->
+                            <t t-call="portal.user_dropdown">
+                                <t t-set="_user_name" t-value="true"/>
+                                <t t-set="_item_class" t-value="'nav-item dropdown'"/>
+                                <t t-set="_link_class" t-value="'nav-link'"/>
+                            </t>
+                        </t>
+                    </div>
+                </div>
+            </nav>
+        </xpath>
+    </template>
+
+    <template id="snippet_options" inherit_id="website.snippet_options">
+       <xpath expr="//div[@data-selector='#wrapwrap > header']//we-select[@data-variable='header-template']" attributes="inside">
+            <we-button title="header reliant "
+               data-name="Reliant"
+               data-customize-website-views="theme_reliant.template_header_magazine_proyect_reliant"
+               data-customize-website-variable="'Project Reliant'"
+               data-img="/theme_reliant/static/img/header-reliant.png"/>
+       </xpath>
+        
+    </template>
+
+    <template id="home" name="Home">
+        <t t-call="website.layout">
+            <section class="s_carousel_wrapper" data-vxml="001">
+                <div id="myCarousel" class="s_carousel s_carousel_default carousel slide" data-interval="10000">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"/>
+                        <li data-target="#myCarousel" data-slide-to="1"/>
+                        <li data-target="#myCarousel" data-slide-to="2"/>
+                        <li data-target="#myCarousel" data-slide-to="3"/>
+                        <li data-target="#myCarousel" data-slide-to="4"/>
+                    </ol>
+                    <!-- Content -->
+                    <div id="reliant-carousel" class="carousel-inner">
+                        <!-- #01 -->
+                        <div class="carousel-item active oe_img_bg " style="background-image: url('/theme_reliant/static/img/img_home_carrusel_1.png');" data-name="Slide">
+                            <div class="container" style="min-height:400px">
+                                <div class="row content">
+                                    <div class="carousel-content col-lg-6 offset-lg-6">
+                                        <p class="home_description_carousel">The only capital that really matters is human capital</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="container">
+                                <div class="row content">
+                                    <div class="carousel-content col-lg-6 offset-lg-3" style="text-align: center;">
+                                        <a href="/home" class="btn_reliant_home" style="" >Learn more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- #02 -->
+                        <div class="carousel-item oe_img_bg " style="background-image: url('/web/image/website.s_carousel_default_image_2');" data-name="Slide">
+                            <div class="container">
+                                <div class="row content">
+                                    <div class="carousel-content col-lg-8 offset-lg-2 bg-black-50 text-center pt48 pb40">
+                                        <h2 style="font-size: 62px;">Clever Slogan</h2>
+                                        <div class="s_hr pt8 pb24" data-snippet="s_hr" data-name="Separator">
+                                            <hr class="w-25 mx-auto" style="border-top-width: 1px; border-top-style: solid;"/>
+                                        </div>
+                                        <p class="lead">Storytelling is powerful.<br/> It draws readers in and engages them.</p>
+                                        <p><a href="/" class="btn btn-primary">Start your journey</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- #03 -->
+                        <div class="carousel-item oe_img_bg " style="background-image: url('/web/image/website.s_carousel_default_image_3');" data-name="Slide">
+                            <div class="container">
+                                <div class="row content">
+                                    <div class="carousel-content col-lg-6 offset-lg-6">
+                                        <h2><font style="font-size: 62px; background-color: rgb(255, 255, 255);">Edit this title</font></h2>
+                                        <h4><font style="background-color: rgb(255, 255, 255);">Good writing is simple, but not simplistic.</font></h4>
+                                        <p><br/></p>
+                                        <p>Good copy starts with understanding how your product or service helps your customers. Simple words communicate better than big words and pompous language.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- #04 -->
+                        <div class="carousel-item oe_img_bg " style="background-image: url('/web/image/website.s_carousel_default_image_3');" data-name="Slide">
+                            <div class="container">
+                                <div class="row content">
+                                    <div class="carousel-content col-lg-6 offset-lg-6">
+                                        <h2><font style="font-size: 62px; background-color: rgb(255, 255, 255);">Edit this title</font></h2>
+                                        <h4><font style="background-color: rgb(255, 255, 255);">Good writing is simple, but not simplistic.</font></h4>
+                                        <p><br/></p>
+                                        <p>Good copy starts with understanding how your product or service helps your customers. Simple words communicate better than big words and pompous language.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- #05 -->
+                        <div class="carousel-item oe_img_bg " style="background-image: url('/web/image/website.s_carousel_default_image_3');" data-name="Slide">
+                            <div class="container">
+                                <div class="row content">
+                                    <div class="carousel-content col-lg-6 offset-lg-6">
+                                        <h2><font style="font-size: 62px; background-color: rgb(255, 255, 255);">Edit this title</font></h2>
+                                        <h4><font style="background-color: rgb(255, 255, 255);">Good writing is simple, but not simplistic.</font></h4>
+                                        <p><br/></p>
+                                        <p>Good copy starts with understanding how your product or service helps your customers. Simple words communicate better than big words and pompous language.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Controls -->
+                    <a class="carousel-control-prev" href="#myCarousel" data-slide="prev" role="img" aria-label="Previous" title="Previous">
+                        <span class="carousel-control-prev-icon"/>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#myCarousel" data-slide="next" role="img" aria-label="Next" title="Next">
+                        <span class="carousel-control-next-icon"/>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </section>
+            <section id="home_section_2" class="s_text_block pt32 pb32 bg-secondary s_masonry_block" >
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6 ">
+                            <div class="">
+                                <p class="rel_snippet_home_descripcion_left">Safety<br>+ </br><br></br>Quality</p>
+
+                            </div>
+                        </div>
+                        <div class="col-6 ">
+                            <div class="row">
+                                <div class="col-4">
+                                    <p class="rel_snippet_home_descripcion_right" >We are an international company providing services in underground mining with core principles that focuses on safety and risk management. Safety is at the core of our values coupled with intelligent systems that help manage our underground projects safely.</p>
+                                </div>
+                                <div class="col-4">
+                                    <p class="rel_snippet_home_descripcion_right" >We are an international company providing services in underground mining with core principles that focuses on safety and risk management. Safety is at the core of our values coupled with intelligent systems that help manage our underground projects safely.</p>
+                                </div>
+                                <div class="col-4">
+                                    <p class="rel_snippet_home_descripcion_right" >We have more than 16 years of experience in the mining industry with current projects in Congo Dr, India, Zambia and Peru. We are a provider of comprehensive mechanised mining services. Our services cover the complete life cycle of a project from concept to completion.jose</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div id="rel_snippet_home_descripcion_img"  data-name="Block">
+                                    <img src="/theme_reliant/static/img/img_home_1.png"  alt=""/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="rel_snippet_home_descripcion_img_base"  data-name="Block">
+                            <img src="/theme_reliant/static/img/base.png"  alt="base_negra"/>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="home_section_3" class="s_text_block pt-1  bg-secondary s_masonry_block" >
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6 rel_snippet4_loc">
+                            <a t-att-href="'/services/'" style="text-decoration: none;">
+                                <div class="rel_snippet_home_1">
+                                    <p class="p_reliant_home_1">Our Services</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-3 rel_snippet4_loc">
+                            <div class="rel_snippet_home_2">
+                                <p class="p_reliant_home_2">World Class Underground Mining Services Reliant constantly works, with social responsibility, to maintain and improve its high standards in safety, speed and efficiency in mechanized development mining. We develop specialized works according to the project requirement using trackless equipment.</p>
+                            </div>
+                        </div>
+                        <div class="col-3 rel_snippet4_loc">
+                            <div class="rel_snippet_home_2">
+                                <p class="p_reliant_home_2">Our presence is around the world executing services for mining companies such as Mopani Copper Mines Plc, Konkola Copper Mines Plc, Lubambe Copper Mine Ltd, Hindustan Zinc Limited and Alphamin Resources Corp.</p>
+                            </div>
+                        </div>
+                    </div>  
+                </div> 
+            </section>  
+            <section id="home_section_4" class="s_text_block pt-1 pb-1 bg-secondary s_masonry_block" >
+                    <div class="container">
+                        <div class="row" >
+                           <div class="col-lg-2 rel_snippet4_loc">                          
+                                <div class="rel_snippet_home_3">
+                                    <p class="p_reliant_home_title">MINE DEVELOPMENT<br></br>→ </p>
+                                    <p class="p_reliant_home_description">Mining tunneling such as Ramps, Drives, Galleries, Cross Cuts, Sub-Levels, Bypass, Windows, Cross Overs, Refuge Chamber, etc</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 rel_snippet4_loc">                          
+                                <div class="rel_snippet_home_3">
+                                    <p class="p_reliant_home_title">LONG-HOLE DRILLLING<br></br>→ </p>
+                                    <p class="p_reliant_home_description">So far, Reliant has the experience, capability and necessary fleet to provide customized solution for Longhole</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 rel_snippet4_loc">                          
+                                <div class="rel_snippet_home_3">
+                                    <p class="p_reliant_home_title">CABLE BOLTING<br></br>→ </p>
+                                    <p class="p_reliant_home_description">Reliant offers a complete suite of underground cable bolting services using the most productive</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 rel_snippet4_loc">                          
+                                <div class="rel_snippet_home_3">
+                                    <p class="p_reliant_home_title">ROCK SUPPORT<br></br>→ </p>
+                                    <p class="p_reliant_home_description">Reliant offers a complete suite of underground cable bolting services using the most</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 rel_snippet4_loc">                          
+                                <div class="rel_snippet_home_3">
+                                    <p class="p_reliant_home_title">HAULING AND LOADING<br></br>→ </p>
+                                    <p class="p_reliant_home_description">Carrying out activities of ore and waste haulage and transport; in underground</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 rel_snippet4_loc">                          
+                                <div class="rel_snippet_home_3">
+                                    <p class="p_reliant_home_title">EQUIPMENT HIRE<br></br>→ </p>
+                                    <p class="p_reliant_home_description">Reliant has the most trustworthy fleet for hiring such as Loaders, Dump Trucks and Drill Rigs</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>            
+            </section>
+            <section id="home_section_5" class="s_text_block pt-1  bg-secondary s_masonry_block" >
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6 rel_snippet4_loc">
+                            <a t-att-href="'/projects/'" style="text-decoration: none;">
+                                <div class="rel_snippet_home_1_2">
+                                    <p class="p_reliant_home_1">Our Projects</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-3 rel_snippet4_loc">
+                            <div class="rel_snippet_home_2_2">
+                                <p class="p_reliant_home_2">All<br></br>→</p>
+                            </div>
+                        </div>
+                        <div class="col-3 rel_snippet4_loc">
+                            <div class="rel_snippet_home_2_2">
+                                <p class="p_reliant_home_2">−−−−−−→ Zambia<br></br>−−−→ Congo Dr<br></br>−−−−−−−−−−−−→ India</p>
+                            </div>
+                        </div>
+                    </div>  
+                </div> 
+            </section>  
+            <section id="home_section_6" class="s_text_block pt-1 pb-1 bg-secondary s_masonry_block" >
+                    <div class="container">
+                        <div class="row" >
+                           <div class="col-lg-2 rel_snippet4_loc">                          
+                                <div class="rel_snippet_home_4_1">
+                                    <div class="rel_snippet_home_4_1_1">
+                                        <p class="p_reliant_home_title">HINDUSTAN<br></br>→ </p>
+                                        <p class="p_reliant_home_description">Underground excavations for mine preparation and development that includes mechanized loose scaling in sections</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 rel_snippet4_loc">                          
+                                <div class="rel_snippet_home_4">
+                                    <img src="/theme_reliant/static/img/img_home_3.png" style="height:100%;
+                                                width:100%;"  alt=""/>   
+                                </div>
+                            </div>
+                            <div class="col-lg-2 rel_snippet4_loc">                          
+                                <div class="rel_snippet_home_4">
+                                    <img src="/theme_reliant/static/img/img_home_4.png" style="height:100%;
+                                                width:100%;"  alt=""/>   
+                                </div>
+                            </div>
+                            <div class="col-lg-2 rel_snippet4_loc">                          
+                                <div class="rel_snippet_home_4">
+                                    <img src="/theme_reliant/static/img/img_home_5.png" style="height:100%;
+                                                width:100%;"  alt=""/>   
+                                </div>
+                            </div>
+                            <div class="col-lg-2 rel_snippet4_loc">                          
+                                <div class="rel_snippet_home_4">
+                                    <img src="/theme_reliant/static/img/img_home_6.png" style="height:100%;
+                                                width:100%;"  alt=""/>   
+                                </div>
+                            </div>
+                            <div class="col-lg-2 rel_snippet4_loc">                          
+                                <div class="rel_snippet_home_4">
+                                    <img src="/theme_reliant/static/img/img_home_7.png" style="height:100%;
+                                                width:100%;"  alt=""/>   
+                                </div>
+                            </div>
+                        </div>
+                    </div>            
+            </section>
+            <div class="oe_structure oe_empty"/>
+        </t>
+    </template>
+
+    <template id="about" name="About">
+        <t t-call="website.layout">
+            <section id="about_section_1" class="s_text_block pt-1 pb-1 bg-secondary s_masonry_block">
+                <div class="container">
+                    <div class="row">
+                        <div class="reliant_ex4">
+                            <div class="reliant_about_div " data-name="Block" >
+                            <p class="p_reliant_about" >
+                                We are seeking a positive and continuous change.<br></br>Through the mutual collaboration between people and technology. Delivering customized strategies and designed solutions.</p>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </section>
+            <section id="about_section_2" class="s_text_block pt-1 pb-1 bg-secondary s_masonry_block">
+                <div class="container">
+                    <div class="row" style="display: block">
+                        <div class="reliant_ex4">
+                            <div class="reliant_about_div_2" data-name="Block" >
+                            <p class="p_reliant_about" >
+                                Feel + Think<br></br>People + Technology<br></br>Collaboratio + Innovation<br></br>Safety + Quality<br></br></p>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </section>
+            <section id="about_section_3" class="s_text_block pt-1  bg-secondary s_masonry_block" data-vcss="001">
+                <div id="container-about-1" class="container">
+                    <div class="row">
+                        <div class="col-6 rel_snippet4_loc">
+                                <div class="rel_snippet_about_1">
+                                    <p class="p_reliant_about_1">Our Values</p>
+                                </div>
+                        </div>
+                        <div class="col-3 rel_snippet4_loc">
+                                <div class="rel_snippet_about_2">
+                                    <p class="p_reliant_home_2">We are a company that lives by its values.<br></br> and our values are.</p>
+                                </div>
+                        </div>
+                        <div class="col-3 rel_snippet4_loc">
+                                <div class="rel_snippet_about_2">
+                                    <p class="p_reliant_home_2">↓</p>
+                                </div>
+                        </div>
+                    </div>  
+                </div> 
+                <div id="container-about-2" class="container">
+                    <div class="row" >
+                       <div class="col-lg-2 rel_snippet4_loc">                          
+                            <div class="rel_snippet_about_3">
+                                <p class="p_reliant_about_title">COMMITMENT<br></br>→ </p>
+                                <p class="p_reliant_about_description">We take our responsibility as a company and individuals to achieve the best results on entrusted tasks.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 rel_snippet4_loc">                          
+                            <div class="rel_snippet_about_3">
+                                <p class="p_reliant_about_title">INNOVATION<br></br>→ </p>
+                                <p class="p_reliant_about_description">We Observe, investigate and create transformation in our value chain to make solutions sustainable.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 rel_snippet4_loc">                          
+                            <div class="rel_snippet_about_3">
+                                <p class="p_reliant_about_title">LOYALTY<br></br>→ </p>
+                                <p class="p_reliant_about_description">We accompany our people, customers and suppliers with honesty, assuring them we will always be by their</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 rel_snippet4_loc">                          
+                            <div class="rel_snippet_about_3">
+                                <p class="p_reliant_about_title">TRUST<br></br>→ </p>
+                                <p class="p_reliant_about_description">We are efficient and have integral business knowledge to obtain successful results in our customer operations.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 rel_snippet4_loc">                          
+                            <div class="rel_snippet_about_3">
+                                <p class="p_reliant_about_title">QUALITY<br></br>→ </p>
+                                <p class="p_reliant_about_description">We aim to achieve ambitious goals, passionately ensuring that our services reflect a legacy in underground mining.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 rel_snippet4_loc">                          
+                            <div class="rel_snippet_about_3">
+                                <p class="p_reliant_about_title">SAFETY<br></br>→ </p>
+                                <p class="p_reliant_about_description">We provide to our employees the necessary tools for conducting our work in strict compliance with safety standards, zero tolerance to harm and develop a culture off risk preventions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>            
+            </section>  
+            <div class="oe_structure oe_empty"/>
+        </t>
+    </template>
+
+    <template id="sustainability" name="Sustainability">
+        <t t-call="website.layout">
+            <section id="sustainability_section_1" class="s_text_block   s_masonry_block" >
+                <div class="container">
+                    <div class="row">
+                        <section id="" class="s_text_block s_masonry_block reliant_sustent_1" >
+                            <p class="reliant_sustent_1_titulo">Our sustainability strategy<br></br></p>
+                                    <p class="reliant_sustent_1_cuerpo">We seek to generate long-term value, i.e. we want to develop profitable businesses that are socially and environmentally responsible. This allows us to build trust and transcend as an organization.<br></br>Our sustainability policy defines clear guidelines and commitments about the 7 most important topics for our sustainable management.</p>
+                        </section>    
+                    </div>
+                </div>
+            </section>
+
+            <section id="sustainability_section_2" class="s_text_block pt-1  bg-secondary s_masonry_block" data-vcss="001">
+                <div id="container-sustainability-1" class="container">
+                    <div class="row">
+                        <div class="col-6 reliant_sustent_loc_1">
+                            <div class="reliant_sustent_2_1">
+                                <p class="reliant_sustent_1_titulo_2">Our Priorities</p>
+                            </div>
+                        </div>
+                        <div class="col-6 reliant_sustent_loc_1">
+                            <div class="reliant_sustent_2_1_2">
+                            </div>
+                        </div>
+                    </div>  
+                </div> 
+                <div id="container-sustainability-2" class="container">
+                    <div class="row" >
+                       <div class="col-lg-2 reliant_sustent_loc_1">                          
+                            <div class="reliant_sustent_3_1">
+                                <p class="reliant_sustent_1_cuerpo_2">ETHICS</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 reliant_sustent_loc_1">                          
+                            <div class="reliant_sustent_3_1">
+                                <p class="reliant_sustent_1_cuerpo_2">PEOPLE DEVELOPMENT</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 reliant_sustent_loc_1">                          
+                            <div class="reliant_sustent_3_1">
+                                <p class="reliant_sustent_1_cuerpo_2">OPERATIONAL EXCELLENCE</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 reliant_sustent_loc_1">                          
+                            <div class="reliant_sustent_3_1">
+                                <p class="reliant_sustent_1_cuerpo_2">SAFETY</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 reliant_sustent_loc_1">                          
+                            <div class="reliant_sustent_3_1">
+                                <p class="reliant_sustent_1_cuerpo_2">ENVIRONMENT</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 reliant_sustent_loc_1">                          
+                            <div class="reliant_sustent_3_1">
+                                <p class="reliant_sustent_1_cuerpo_2">COMMUNICATION</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="container-sustainability-3" class="container">
+                    <div class="row">
+                        <div class="col-6 reliant_sustent_loc_1">
+                            <div class="reliant_sustent_2_1">
+                                <p class="reliant_sustent_1_titulo_2">Our policies</p>
+                            </div>
+                        </div>
+                        <div class="col-2 reliant_sustent_loc_1">
+                            <div class="reliant_sustent_2_2">
+                                <p class="reliant_sustent_1_cuerpo_3">SAFETY, OCCUPATIONAL HEALTH AND ENVIRONMENT PILICY</p>
+                            </div>
+                        </div>
+                        <div class="col-2 reliant_sustent_loc_1">
+                            <div class="reliant_sustent_2_2">
+                                <p class="reliant_sustent_1_cuerpo_3">SAFETY, OCCUPATIONAL HEALTH AND ENVIRONMENT PILICY</p>
+                            </div>
+                        </div>
+                        <div class="col-2 reliant_sustent_loc_1">
+                            <div class="reliant_sustent_2_2">
+                                <p class="reliant_sustent_1_cuerpo_3">SAFETY, OCCUPATIONAL HEALTH AND ENVIRONMENT PILICY</p>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+                <div id="container-sustainability-4" class="container">
+                    <div class="row">
+                        <div class="col-6 reliant_sustent_loc_1">
+                            <div class="reliant_sustent_2_1">
+                                <p class="reliant_sustent_1_titulo_2">Our ethics channels</p>
+                            </div>
+                        </div>
+                        <div class="col-3 reliant_sustent_loc_1">
+                            <div class="reliant_sustent_2_2">
+                                <p class="reliant_sustent_1_cuerpo_3">RELIAND OUR CODE OF ETHICS AND BUSINESS CONDUCT</p>
+                            </div>
+                        </div>
+                        <div class="col-3 reliant_sustent_loc_1">
+                            <div class="reliant_sustent_2_2">
+                                <p class="reliant_sustent_1_cuerpo_3">RELIAND LISTENS</p>
+                            </div>
+                        </div>
+                    </div>  
+                </div> 
+            </section>  
+            <div class="oe_structure oe_empty"/>
+
+        </t>
+    </template>
+
+</odoo>

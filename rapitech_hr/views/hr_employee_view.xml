@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_employee_kanban_inherit">
+        <field name="name">hr.employee.kanban</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.hr_kanban_view_employees"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="last_name"/>
+                <field name="mother_last_name"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="view_employee_form_inherit">
+        <field name="name">hr.employee.form</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page name="datos_personales" string="Datos Personales" >
+                   <group>
+                        <group>
+                            <field name="type_document_id" options="{'no_create_edit': True, 'no_create': True}"/>
+                            <field name="document_number" />
+                            <field name="pension_fund" options="{'no_create_edit': True, 'no_create': True}" />
+                            <field name="code_cussp" />
+                        </group>
+                        <group>
+                            <field name="date_enrollment_afp" />
+                            <field name="commission_scheme" />
+                            <field name="detailed_address" />
+                        </group>
+                    </group>
+                    </page>
+                 <page name="adicional" string="Adicional" >
+                    <group>
+                        <group>
+                            <field name="not_consider_calculation" />
+                            <field name="no_declarar_al_pdt" />
+                            <field name="no_affection_fifth" />
+                        </group> 
+                    </group> 
+                </page>
+                <page name="datos_laborales" string="Datos Laborales" >
+                    <group>
+                        <group>
+                            <field name="date_entry" />
+                            <field name="type_employee" options="{'no_create_edit': True, 'no_create': True}"/>
+                            <field name="affiliate_eps" />
+                            <field name="date_termination" />
+                        </group>
+                        <group>
+                            <field name="reason_termination" options="{'no_create_edit': True, 'no_create': True}" />
+                            <field name="assignment_family" />
+                            <field name="bank_account_of_assets" />
+                            <field name="bank_id" options="{'no_create_edit': True, 'no_create': True}" />
+                            <field name="account_cts" />
+                            <field name="bank_cts_id" options="{'no_create_edit': True, 'no_create': True}" />
+                        </group>
+                    </group>
+                </page>
+                <page name="datos_complementarios" string="Datos Complementarios" >
+                    <group>
+                        <group>
+                            <field name="special_situation" options="{'no_create_edit': True, 'no_create': True}"/>
+                        </group>
+                        <group>
+                            <field name="type_payment" options="{'no_create_edit': True, 'no_create': True}" />
+                        </group>
+                    </group>
+                </page>
+                <page name="datos_familiares" string="Datos Familiares" >
+                    <field name="family_ids" >
+                        <tree editable="bottom"> 
+                            <field name="names_surnames_family" />
+                            <field name="bond_family" options="{'no_create_edit': True, 'no_create': True}"/>
+                            <field name="birthdate_family" />
+                            <field name="type_document_id" options="{'no_create_edit': True, 'no_create': True}" />
+                            <field name="doc_number" />
+                        </tree>
+                    </field>
+                </page>
+                <page name="otros_ingresos_de_quinta_categoria" string="Otros ingresos de Quinta Categoria" >
+                    <field name="other_income_ids" >
+                        <tree editable="bottom">
+                            <field name="period" options="{'no_create_edit': True, 'no_create': True}"/>
+                            <field name="total_received" sum="Total Received"/>
+                            <field name="total_withheld" sum="Total Withheld"/>      
+                        </tree>
+                    </field>              
+                </page>
+            </notebook>
+
+            <xpath expr="//h1" position="replace">
+                <h2>
+                    <group>
+                        <field name="name" string="Nombres" required="True"/>
+                        <field name="last_name" required="True"/>
+                    </group>
+                    <group>
+                        <field name="mother_last_name" required="True"/>
+                    </group>
+                </h2>
+                <h3>
+                    <group>
+                        <field name="code"/>
+                    </group>
+                </h3>
+            </xpath> 
+        </field>
+    </record>
+</odoo>
