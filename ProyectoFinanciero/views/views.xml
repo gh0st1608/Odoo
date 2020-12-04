@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <!--INICIO CATEGORIA INGRESO-->
+        <record id="view_modulo1_categoria_ingreso_form" model="ir.ui.view">
+            <field name="name">modulo1.categoria.ingreso.form</field>
+            <field name="model">modulo1.categoria.ingreso</field>
+            <field name="arch" type="xml">
+                <form string="Ingreso">
+                    <sheet>
+                        <group col="4">
+                            <field name="descripcion"/>
+                            <field name="activo"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+      <record id="view_modulo1_categoria_ingreso_tree" model="ir.ui.view">
+            <field name="name">modulo1.categoria.ingreso.tree</field>
+            <field name="model">modulo1.categoria.ingreso</field>
+            <field name="arch" type="xml">
+                <tree string="Ingreso">
+                    <field name="descripcion"/>
+                    <field name="activo"/>
+                </tree>
+            </field>
+        </record>
+
+      <record id="modulo1_categoria_ingreso_action" model="ir.actions.act_window">
+            <field name="name">Categoria Ingreso</field>
+            <field name="res_model">modulo1.categoria.ingreso</field>
+            <field name="view_mode">tree,form</field>
+            <!--<field name="search_view_id" ref="view_department_filter"/>-->
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Crea una nueva categoria de ingreso
+                </p>
+            </field>
+        </record>
+    <!--FIN CATEGORIA INGRESO-->
+
+    <!--INICIO CATEGORIA EGRESO-->
+        <record id="view_modulo1_categoria_egreso_form" model="ir.ui.view">
+            <field name="name">modulo1.categoria.egreso.form</field>
+            <field name="model">modulo1.categoria.egreso</field>
+            <field name="arch" type="xml">
+                <form string="Categoria Egreso">
+                    <sheet>
+                        <group col="4">
+                            <field name="descripcion"/>
+                            <field name="activo"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+      <record id="view_modulo1_categoria_egreso_tree" model="ir.ui.view">
+            <field name="name">modulo1.categoria.egreso.tree</field>
+            <field name="model">modulo1.categoria.egreso</field>
+            <field name="arch" type="xml">
+                <tree string="Categoria Egreso">
+                    <field name="descripcion"/>
+                    <field name="activo"/>
+                </tree>
+            </field>
+        </record>
+
+      <record id="modulo1_categoria_egreso_action" model="ir.actions.act_window">
+            <field name="name">Categoria Egreso</field>
+            <field name="res_model">modulo1.categoria.egreso</field>
+            <field name="view_mode">tree,form</field>
+            <!--<field name="search_view_id" ref="view_department_filter"/>-->
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Crea una nueva categoria de egreso
+                </p>
+            </field>
+        </record>
+    <!--FIN CATEGORIA EGRESO-->
+
+     <!--INICIO CLIENTE-->
+        <record id="view_modulo1_categoria_egreso_form" model="ir.ui.view">
+            <field name="name">modulo1.cliente.form</field>
+            <field name="model">modulo1.cliente</field>
+            <field name="arch" type="xml">
+                <form string="Cliente">
+                    <sheet>
+                        <group col="4">
+                            <field name="descripcion"/>
+                            <field name="ruc"/>
+                            <field name="cel_contacto"/>
+                            <field name="activo"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+      <record id="view_modulo1_cliente_tree" model="ir.ui.view">
+            <field name="name">modulo1.cliente.tree</field>
+            <field name="model">modulo1.cliente</field>
+            <field name="arch" type="xml">
+                <tree string="Cliente">
+                    <field name="descripcion"/>
+                    <field name="activo"/>
+                </tree>
+            </field>
+        </record>
+
+      <record id="modulo1_cliente_action" model="ir.actions.act_window">
+            <field name="name">Cliente</field>
+            <field name="res_model">modulo1.cliente</field>
+            <field name="view_mode">tree,form</field>
+            <!--<field name="search_view_id" ref="view_department_filter"/>-->
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Crea un nuevo Cliente
+                </p>
+            </field>
+        </record>
+    <!--FIN CLIENTE-->
+
+    <!--INICIO PROVEEDOR-->
+        <record id="view_modulo1_proveedor_form" model="ir.ui.view">
+            <field name="name">modulo1.proveedor.form</field>
+            <field name="model">modulo1.proveedor</field>
+            <field name="arch" type="xml">
+                <form string="Cliente">
+                    <sheet>
+                        <group col="4">
+                            <field name="descripcion"/>
+                            <field name="ruc"/>
+                            <field name="cel_contacto"/>
+                            <field name="activo"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+      <record id="view_modulo1_proveedor_tree" model="ir.ui.view">
+            <field name="name">modulo1.proveedor.tree</field>
+            <field name="model">modulo1.proveedor</field>
+            <field name="arch" type="xml">
+                <tree string="Cliente">
+                    <field name="descripcion"/>
+                    <field name="activo"/>
+                </tree>
+            </field>
+        </record>
+
+      <record id="modulo1_proveedor_action" model="ir.actions.act_window">
+            <field name="name">Proveedor</field>
+            <field name="res_model">modulo1.proveedor</field>
+            <field name="view_mode">tree,form</field>
+            <!--<field name="search_view_id" ref="view_department_filter"/>-->
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Crea un nuevo Proveedor
+                </p>
+            </field>
+        </record>
+    <!--FIN PROVEEDOR-->
+
+    <!--INICIO INGRESO-->
+
+        <record id="view_modulo1_ingreso_form" model="ir.ui.view">
+            <field name="name">modulo1.ingreso.form</field>
+            <field name="model">modulo1.ingreso</field>
+            <field name="arch" type="xml">
+                <form string="Ingreso">
+                    <header>
+                        <button string="Pagar" name="%(action_view_modulo1_recaudo_ingreso_form)d" type="action" class="oe_highlight"/>
+                    </header>
+                    <sheet>
+                        <group col="4">
+                            <field name="comentario"/>
+                            <field name="fecha_provision_ingreso"/>
+                            <field name="igv"/>
+                            <field name="monto_provision_ingreso"/>
+                            <field name="periodo"/>
+                            <field name="pago_ids"/>
+                            <field name="state"/>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+ 
+ 
+    <!--<record id="view_employee_legajo_tree" model="ir.ui.view">
+            <field name="name">hr.employee.legajo.tree</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_tree"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//field[@name='name']" position="after">
+                		<field name="last_name"/>
+                		<field name="mother_last_name"/>
+                	</xpath>
+            </field>
+        </record>-->
+    
+
+      <record id="view_modulo1_ingreso_tree" model="ir.ui.view">
+            <field name="name">modulo1.ingreso.tree</field>
+            <field name="model">modulo1.ingreso</field>
+            <field name="arch" type="xml">
+                <tree string="Ingreso">
+                    <field name="monto_provision_ingreso"/>
+                    <field name="comentario"/>
+                    <field name="periodo"/>
+                </tree>
+            </field>
+        </record>
+
+      <record id="modulo1_ingreso_action" model="ir.actions.act_window">
+            <field name="name">Ingreso</field>
+            <field name="res_model">modulo1.ingreso</field>
+            <field name="view_mode">tree,form</field>
+            <!--<field name="search_view_id" ref="view_department_filter"/>-->
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Crea una nueva ingreso
+                </p>
+            </field>
+        </record>
+<!--FIN INGRESO-->
+
+<!--INICIO EGRESO-->
+        <record id="view_modulo1_egreso_form" model="ir.ui.view">
+            <field name="name">modulo1.egreso.form</field>
+            <field name="model">modulo1.egreso</field>
+            <field name="arch" type="xml">
+                <form string="Egreso">
+                    <sheet>
+                        <group col="4">
+                            <field name="comentario"/>
+                            <field name="fecha_provision_egreso"/>
+                            <field name="igv"/>
+                            <field name="monto_provision_egreso"/>
+                            <field name="periodo"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+      <record id="view_modulo1_egreso_tree" model="ir.ui.view">
+            <field name="name">modulo1.egreso.tree</field>
+            <field name="model">modulo1.egreso</field>
+            <field name="arch" type="xml">
+                <tree string="Egreso">
+                    <field name="monto_provision_egreso"/>
+                    <field name="comentario"/>
+                    <field name="periodo"/>
+                </tree>
+            </field>
+        </record>
+
+      <record id="modulo1_egreso_action" model="ir.actions.act_window">
+            <field name="name">Egreso</field>
+            <field name="res_model">modulo1.egreso</field>
+            <field name="view_mode">tree,form</field>
+            <!--<field name="search_view_id" ref="view_department_filter"/>-->
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Crea una nueva egreso
+                </p>
+            </field>
+        </record>
+<!--FIN EGRESO-->
+
+<!--INICIO PAGO-->
+        <record id="view_modulo1_pago_form" model="ir.ui.view">
+            <field name="name">modulo1.pago.form</field>
+            <field name="model">modulo1.pago</field>
+            <field name="arch" type="xml">
+                <form string="Pagos">
+                    <sheet>
+                        <group col="4">
+                            <field name="comentario"/>
+                            <field name="fecha_pago"/>
+                            <field name="monto_recaudo"/>
+                            <field name="monto_recaudo_igv"/>
+                            <field name="monto_recaudo_detraccion"/>
+                            <field name="monto_recaudo_total"/>
+                            <field name="ingreso_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+      <record id="view_modulo1_pago_tree" model="ir.ui.view">
+            <field name="name">modulo1.pago.tree</field>
+            <field name="model">modulo1.pago</field>
+            <field name="arch" type="xml">
+                <tree string="Pagos">
+                    <field name="monto_recaudo_total"/>
+                    <field name="fecha_pago"/>
+                    <field name="metodo_pago"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_modulo1_pago" model="ir.actions.act_window">
+            <field name="name">Lista de Pago</field>
+            <field name="res_model">modulo1.pago</field>
+            <field name="view_mode">tree,form</field>
+      </record>
+
+
+<!--FIN PAGO-->
+
+
+<!-- MENU PRINCIPALES-->
+  <menuitem id="menu_principal" name="Demo Finanzas" /> 
+  <menuitem id="menu_maestro" parent="menu_principal" name="Maestro" />
+  <menuitem id="menu_operacion" parent="menu_principal" name="Operacion"  /> 
+  <menuitem id="menu_pagos" parent="menu_principal" name="Pagos" action="action_modulo1_pago"/> 
+
+<!-- MENUS SECUNDARIOS MAESTROS-->
+    <menuitem id="modulo1_categoria_ingreso_menu" parent="menu_maestro" name="Categoria Ingreso" action="modulo1_categoria_ingreso_action" sequence="4"/>
+    <menuitem id="modulo1_categoria_egreso_menu" parent="menu_maestro" name="Categoria Egreso" action="modulo1_categoria_egreso_action" sequence="3"/>
+    <menuitem id="modulo1_cliente_menu" parent="menu_maestro" name="Cliente" action="modulo1_cliente_action" sequence="2" />
+    <menuitem id="modulo1_proveedor_menu" parent="menu_maestro" name="Proveedor" action="modulo1_proveedor_action" sequence="1"/>
+    <menuitem id="modulo1_ingreso_menu" parent="menu_operacion" name="Ingreso" action="modulo1_ingreso_action" />
+    <menuitem id="modulo1_egreso_menu" parent="menu_operacion" name="Egreso" action="modulo1_egreso_action" />
+
+  </data>
+</odoo>
+

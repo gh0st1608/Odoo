@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_modulo1_categoria_ingreso,modulo1.categoria.ingreso,model_modulo1_categoria_ingreso,,1,1,1,1
+access_modulo1_categoria_egreso,modulo1.categoria.egreso,model_modulo1_categoria_egreso,,1,1,1,1
+access_modulo1_cliente,modulo1.cliente,model_modulo1_cliente,,1,1,1,1
+access_modulo1_proveedor,proveedor.egreso,model_modulo1_proveedor,,1,1,1,1
+access_modulo1_ingreso,modulo1.ingreso,model_modulo1_ingreso,,1,1,1,1
+access_modulo1_egreso,modulo1.egreso,model_modulo1_egreso,,1,1,1,1
+access_modulo1_pago,modulo1.pago,model_modulo1_pago,,1,1,1,1
+access_modulo1_transient_recaudo,modulo1.transient.recaudo,model_modulo1_transient_recaudo,,1,1,1,1
+

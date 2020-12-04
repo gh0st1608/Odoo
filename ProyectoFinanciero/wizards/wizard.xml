@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="view_modulo1_recaudo_ingreso_form" model="ir.ui.view">
+            <field name="name">Recaudo Ingreso</field>
+            <field name="model">modulo1.transient.recaudo</field>
+            <field name="arch" type="xml">
+                <form string="Recaudo de Ingreso">
+                    <group>
+                        <field name="monto_recaudo"/> <!-- campo heredado-->
+                        <field name="monto_recaudo_igv"/>
+                        <field name="monto_recaudo_detraccion"/>
+                        <field name="monto_recaudo_total"/>
+                        <field name="impuestos_bln"/>
+                    </group>
+                    <footer>
+                        <button name="ingresar_recaudo" id="recaudar_ingreso" string="Recaudar" type="object"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="action_view_modulo1_recaudo_ingreso_form" model="ir.actions.act_window">
+            <field name="name">Recaudar Ingreso</field>
+            <field name="res_model">modulo1.transient.recaudo</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <!-- TODO: check if we need this 
+            <field name="binding_model_id" ref="modulo1.model_modulo1_ingreso" />
+            <field name="binding_view_types">form</field>
+            -->
+        </record>
+
+</odoo>
