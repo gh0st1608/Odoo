@@ -2,3 +2,13 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_reliant_project,access.reliant.project,model_reliant_project,,1,1,1,1
 access_reliant_service,access.reliant.service,model_reliant_service,,1,1,1,1
 
+
+access_reliant_job_department,access.reliant.job.department,model_reliant_job_department,,1,1,1,1
+access_reliant_job_site,access.reliant.job.site,model_reliant_job_site,,1,1,1,1
+access_reliant_job_language,access.reliant.job.language,model_reliant_job_language,,1,1,1,1
+access_reliant_job_position,access.reliant.job.position,model_reliant_job_position,,1,1,1,1
+access_reliant_job_location,access.reliant.job.location,model_reliant_job_location,,1,1,1,1
+access_reliant_job_category,access.reliant_job_category,model_reliant_job_category,,1,1,1,1
+
+access_reliant_job_opportunity,access.reliant.job.opportunity,model_reliant_job_opportunity,,1,1,1,1
+
